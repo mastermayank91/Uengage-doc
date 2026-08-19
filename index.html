@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>uEngage — Product Suite Overview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  --deep-green:#003C1B;
+  --forest:#0A5A31;
+  --mint:#EEF6F0;
+  --mint-2:#DCEFE1;
+  --gold:#C99A2E;
+  --canvas:#FAF9F5;
+  --ink:#122016;
+  --sub:#5B6B60;
+  --line:#E1E7E0;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:#EFEEE8;
+  font-family:'Figtree',Arial,sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block;}
+.wrap{max-width:1240px; margin:0 auto; padding:0 56px;}
+.eyebrow{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1240px; margin:0 auto; padding:18px 56px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.topbar img{height:30px; width:auto;}
+.topbar-cta{
+  font-family:'Sora'; font-weight:700; font-size:13px;
+  background:var(--deep-green); color:#fff; padding:10px 20px; border-radius:8px;
+  white-space:nowrap; text-decoration:none;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:radial-gradient(120% 160% at 8% 0%, #0B5C31 0%, #003C1B 55%, #012C14 100%);
+  padding:60px 0 46px;
+  color:var(--white);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(420px 420px at 92% -10%, rgba(201,154,46,0.20), transparent 60%),
+    radial-gradient(320px 320px at 78% 90%, rgba(255,255,255,0.06), transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{position:relative; z-index:1;}
+.hero-badge{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,0.28);
+  color:rgba(255,255,255,0.85);
+  padding:7px 14px; border-radius:100px;
+  font-family:'Space Mono'; font-size:11px; letter-spacing:.08em;
+  margin-bottom:22px;
+}
+.hero-title{
+  font-family:'Sora'; font-weight:700;
+  font-size:44px; line-height:1.12; letter-spacing:-0.015em;
+  max-width:760px; margin:0 0 16px;
+}
+.hero-title em{font-style:normal; color:#B7E8C4;}
+.hero-sub{
+  font-size:16.5px; color:rgba(255,255,255,0.78); max-width:600px; line-height:1.55;
+  margin:0 0 32px;
+}
+.hero-stats{
+  display:flex; flex-wrap:wrap; gap:0; border-top:1px solid rgba(255,255,255,0.16); padding-top:24px;
+}
+.hstat{padding-right:44px; margin-right:44px; border-right:1px solid rgba(255,255,255,0.16); margin-bottom:10px;}
+.hstat:last-child{border-right:none; margin-right:0;}
+.hstat .num{font-family:'Sora'; font-weight:700; font-size:23px; color:var(--white);}
+.hstat .lbl{font-size:12.5px; color:rgba(255,255,255,0.62); margin-top:2px;}
+
+/* ---------- PILLAR SECTIONS ---------- */
+.pillar{padding:64px 0; border-bottom:1px solid var(--line);}
+.pillar.alt{background:var(--mint);}
+.pillar.dark{background:linear-gradient(180deg,#0C3D22,#08331C); color:#fff; border-bottom:none;}
+
+.pillar-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+}
+.pillar.reverse .pillar-grid{direction:rtl;}
+.pillar.reverse .pillar-grid > *{direction:ltr;}
+
+.pillar-badge{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+.pillar-badge img{height:26px; width:auto;}
+.pillar-badge .step{
+  font-family:'Space Mono'; font-size:10.5px; color:var(--forest); background:var(--mint-2);
+  padding:4px 9px; border-radius:6px; letter-spacing:.06em;
+}
+.pillar.dark .pillar-badge .step{background:rgba(255,255,255,0.12); color:#B7E8C4;}
+
+.pillar-name{font-family:'Sora'; font-weight:700; font-size:30px; letter-spacing:-0.01em; margin:0 0 12px;}
+.pillar-tagline{font-family:'Sora'; font-weight:600; font-size:15.5px; color:var(--forest); margin:0 0 14px;}
+.pillar.dark .pillar-tagline{color:#8FD1A3;}
+.pillar-desc{font-size:15px; color:var(--sub); line-height:1.65; margin:0 0 22px; max-width:460px;}
+.pillar.dark .pillar-desc{color:rgba(255,255,255,0.72);}
+
+.chip-row{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:26px;}
+.chip{
+  font-family:'Space Mono'; font-size:11px; padding:7px 13px; border-radius:100px;
+  background:var(--white); border:1px solid var(--line); color:var(--ink);
+}
+.pillar.dark .chip{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.18); color:#fff;}
+
+.mini-stats{display:flex; gap:28px; flex-wrap:wrap;}
+.mini-stat .n{font-family:'Sora'; font-weight:700; font-size:20px; color:var(--deep-green);}
+.pillar.dark .mini-stat .n{color:#fff;}
+.mini-stat .l{font-size:11.5px; color:var(--sub); margin-top:2px;}
+.pillar.dark .mini-stat .l{color:rgba(255,255,255,0.6);}
+
+/* Screenshot frame */
+.shot{
+  background:var(--white);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 30px 60px -20px rgba(0,20,10,0.28);
+  border:1px solid var(--line);
+  position:relative;
+  min-height:220px;
+}
+.shot img{border-radius:10px; width:100%; height:auto;}
+.shot--fallback img{display:none;}
+.shot--fallback{
+  display:flex; align-items:center; justify-content:center; min-height:280px;
+  background:linear-gradient(135deg,var(--mint-2),var(--mint));
+}
+.shot--fallback::after{
+  content:attr(data-fallback-text);
+  font-family:'Space Mono'; font-size:12px; color:var(--forest); text-align:center; padding:20px;
+}
+
+/* ---------- RESULTS BAND ---------- */
+.results{background:var(--white); padding:52px 0; border-bottom:1px solid var(--line);}
+.results-head{text-align:center; margin-bottom:34px;}
+.results-head h2{font-family:'Sora'; font-weight:700; font-size:24px; margin:0 0 8px;}
+.results-head p{color:var(--sub); font-size:14.5px; margin:0;}
+.results-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+.result-card{
+  text-align:center; padding:26px 14px; border:1px solid var(--line); border-radius:14px; background:var(--canvas);
+}
+.result-card .num{font-family:'Sora'; font-weight:700; font-size:28px; color:var(--deep-green);}
+.result-card .lbl{font-size:12px; color:var(--sub); margin-top:6px;}
+
+/* ---------- FOOTER ---------- */
+.foot{
+  background:var(--deep-green); color:#fff;
+  padding:44px 0 30px;
+}
+.foot-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.14);}
+.foot-top img{height:26px; width:auto; margin-bottom:10px;}
+.foot-top .s{font-size:13px; color:rgba(255,255,255,0.6); max-width:360px; line-height:1.6;}
+.cta{background:var(--gold); color:#fff; font-family:'Sora'; font-weight:700; font-size:13px; padding:13px 26px; border-radius:9px; white-space:nowrap; display:inline-block; text-decoration:none;}
+.foot-bottom{display:flex; justify-content:space-between; padding-top:22px; font-size:12px; color:rgba(255,255,255,0.5); flex-wrap:wrap; gap:10px;}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 980px){
+  .wrap, .topbar-inner{padding-left:28px; padding-right:28px;}
+  .hero-title{font-size:34px;}
+  .pillar{padding:48px 0;}
+  .pillar-grid{grid-template-columns:1fr; gap:32px;}
+  .pillar.reverse .pillar-grid{direction:ltr;}
+  .pillar.reverse .pillar-grid .shot{order:-1;}
+  .results-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width: 600px){
+  .wrap, .topbar-inner{padding-left:18px; padding-right:18px;}
+  .hero{padding:44px 0 34px;}
+  .hero-title{font-size:27px;}
+  .hero-sub{font-size:14.5px;}
+  .hstat{padding-right:22px; margin-right:22px;}
+  .hstat .num{font-size:19px;}
+  .pillar-name{font-size:24px;}
+  .results-grid{grid-template-columns:repeat(2,1fr); gap:14px;}
+  .result-card .num{font-size:22px;}
+  .topbar-cta{padding:9px 14px; font-size:12px;}
+  .foot-top{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <img src="https://www.uengage.io/images/uengage-logo-new-green.svg" alt="uEngage logo" referrerpolicy="no-referrer"
+           onerror="this.onerror=null;this.outerHTML='&lt;span style=&quot;font-family:Sora,sans-serif;font-weight:700;font-size:20px;color:#003C1B;&quot;&gt;uEngage&lt;/span&gt;';">
+      <a class="topbar-cta" href="https://www.uengage.io/book-demo">Book a Demo</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="hero-badge">PRODUCT SUITE — 2026</span>
+      <h1 class="hero-title">One Platform. Direct Orders. <em>Real Growth.</em></h1>
+      <p class="hero-sub">From online to dine-in, delivery, loyalty, and beyond — uEngage unifies your entire F&amp;B commerce journey across Edge, Prism and Flash.</p>
+      <div class="hero-stats">
+        <div class="hstat"><div class="num">10,000+</div><div class="lbl">Brands on uEngage</div></div>
+        <div class="hstat"><div class="num">₹1,500Cr+</div><div class="lbl">Direct orders processed</div></div>
+        <div class="hstat"><div class="num">5M+</div><div class="lbl">Deliveries managed</div></div>
+        <div class="hstat"><div class="num">200+</div><div class="lbl">Cities across India</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDGE -->
+  <section class="pillar">
+    <div class="wrap pillar-grid">
+      <div>
+        <div class="pillar-badge">
+          <img src="https://www.uengage.io/images/headers/edge.svg" alt="Edge icon" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+          <span class="step">STEP 01 · ORDERING</span>
+        </div>
+        <h2 class="pillar-name">Edge</h2>
+        <p class="pillar-tagline">Take control. Own your orders. Keep your profits.</p>
+        <p class="pillar-desc">Edge lets F&amp;B brands take direct orders through their own Website, App, WhatsApp, Kiosk and QR — without giving away margins to third-party platforms.</p>
+        <div class="chip-row">
+          <span class="chip">Mobile App</span>
+          <span class="chip">Website Ordering</span>
+          <span class="chip">Self-Ordering Kiosk</span>
+          <span class="chip">QR Ordering</span>
+          <span class="chip">WhatsApp Ordering</span>
+          <span class="chip">uServe · Restaurant Ops</span>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><div class="n">10,000+</div><div class="l">Outlets live</div></div>
+          <div class="mini-stat"><div class="n">5M+</div><div class="l">Users served</div></div>
+          <div class="mini-stat"><div class="n">₹1,500Cr+</div><div class="l">GMV processed</div></div>
+        </div>
+      </div>
+      <div class="shot" data-fallback-text="uEngage Edge — Mobile App &amp; Website Ordering">
+        <img src="https://www.uengage.io/images/uengage-edge-mobile-app.webp" alt="uEngage Edge mobile app and website ordering screenshot" referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.closest('.shot').classList.add('shot--fallback')">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRISM -->
+  <section class="pillar alt reverse">
+    <div class="wrap pillar-grid">
+      <div>
+        <div class="pillar-badge">
+          <img src="https://www.uengage.io/images/headers/prism.svg" alt="Prism icon" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+          <span class="step">STEP 02 · CRM &amp; LOYALTY</span>
+        </div>
+        <h2 class="pillar-name">Prism</h2>
+        <p class="pillar-tagline">Loyal guests. Smarter sales. More repeat visits.</p>
+        <p class="pillar-desc">Prism turns one-time customers into repeat revenue — digital bills, RFM-based customer insights, automated campaigns, and loyalty &amp; membership programs built for F&amp;B.</p>
+        <div class="chip-row">
+          <span class="chip">CRM &amp; Customer Insights</span>
+          <span class="chip">RFM Segmentation</span>
+          <span class="chip">Loyalty &amp; Membership</span>
+          <span class="chip">Digital Bills</span>
+          <span class="chip">Marketing Automation</span>
+          <span class="chip">Feedback &amp; Reviews</span>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><div class="n">40%+</div><div class="l">Lift in repeat visits</div></div>
+          <div class="mini-stat"><div class="n">30x</div><div class="l">ROI on campaigns</div></div>
+          <div class="mini-stat"><div class="n">500k+</div><div class="l">Guests retained monthly</div></div>
+        </div>
+      </div>
+      <div class="shot" data-fallback-text="uEngage Prism — CRM, RFM, Loyalty &amp; Campaigns">
+        <img src="https://www.uengage.io/images/banners2/prism.webp" alt="uEngage Prism CRM and loyalty dashboard screenshot" referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.closest('.shot').classList.add('shot--fallback')">
+      </div>
+    </div>
+  </section>
+
+  <!-- FLASH -->
+  <section class="pillar dark">
+    <div class="wrap pillar-grid">
+      <div>
+        <div class="pillar-badge">
+          <img src="https://www.uengage.io/images/headers/flash.svg" alt="Flash icon" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+          <span class="step">STEP 03 · DELIVERY &amp; LOGISTICS</span>
+        </div>
+        <h2 class="pillar-name">Flash</h2>
+        <p class="pillar-tagline">Smart delivery. Scaled efficiency. Zero headaches.</p>
+        <p class="pillar-desc">AI-powered hyperlocal delivery management — unify in-house fleet and 3PL partners, live tracking, and route optimisation on a single dashboard.</p>
+        <div class="chip-row">
+          <span class="chip">Fleet Management</span>
+          <span class="chip">3PL Integration</span>
+          <span class="chip">Live Delivery Tracking</span>
+          <span class="chip">Route Optimisation</span>
+          <span class="chip">Last-Mile APIs</span>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><div class="n">10M+</div><div class="l">Delivery tasks enabled</div></div>
+          <div class="mini-stat"><div class="n">97%</div><div class="l">On-time deliveries</div></div>
+          <div class="mini-stat"><div class="n">60%</div><div class="l">Fleet productivity gain</div></div>
+        </div>
+      </div>
+      <div class="shot" data-fallback-text="uEngage Flash — Delivery &amp; Logistics Dashboard" style="background:#0F4A29; border-color:rgba(255,255,255,0.12);">
+        <img src="https://www.uengage.io/images/banners2/route-optimised3.webp" alt="uEngage Flash delivery and route optimisation screenshot" referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.closest('.shot').classList.add('shot--fallback')">
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results">
+    <div class="wrap">
+      <div class="results-head">
+        <h2>Results You Can Count On</h2>
+        <p>Scale you can trust — across every restaurant format in India.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card"><div class="num">₹1,500Cr+</div><div class="lbl">Direct Orders Processed</div></div>
+        <div class="result-card"><div class="num">5M+</div><div class="lbl">Deliveries Managed</div></div>
+        <div class="result-card"><div class="num">2x</div><div class="lbl">Repeat Rate Increase</div></div>
+        <div class="result-card"><div class="num">10,000+</div><div class="lbl">Brands on uEngage</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <div>
+          <img src="https://www.uengage.io/images/newLogo-uengage-white.svg" alt="uEngage logo" referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.outerHTML='&lt;span style=&quot;font-family:Sora,sans-serif;font-weight:700;font-size:20px;color:#fff;&quot;&gt;uEngage&lt;/span&gt;';">
+          <div class="s">Empowering restaurants and retail businesses with comprehensive digital solutions that drive growth, enhance customer experience, and streamline operations.</div>
+        </div>
+        <a class="cta" href="https://www.uengage.io/book-demo">Book a Demo →</a>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 uEngage. All rights reserved.</span>
+        <span>Edge · Prism · Flash — One Connected Platform</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
